@@ -23,6 +23,7 @@ slides start with the week number.
 You can also build the slides locally if you've been editing them and want to
 see how they'll look before you push, or if you don't have push access to the
 project: 
+
     # Installing Dependencies:
 
     # Debian and Ubuntu
