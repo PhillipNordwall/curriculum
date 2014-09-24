@@ -24,6 +24,20 @@ You can also build the slides locally if you've been editing them and want to
 see how they'll look before you push, or if you don't have push access to the
 project: 
 
+    # Installing Dependencies:
+
+    # Debian and Ubuntu
+    $ sudo apt-get install build-essential
+    $ sudo apt-get install libtiff4-dev libjpeg8-dev zlib1g-dev \
+    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk \
+    python3-dev python3-setuptoolsi
+
+    # Fedora
+    $ sudo yum groupinstall "Development Tools" "Development Libraries"
+    $ sudo yum install libtiff-devel libjpeg-devel libzip-devel freetype-devel \
+    lcms2-devel libwebp-devel tcl-devel tk-devel
+    
+    # Installing Python Libraries
     $ sudo pip install virtualenv
     $ git clone https://github.com/DevOpsBootcamp/website.git
     $ virtualenv website
