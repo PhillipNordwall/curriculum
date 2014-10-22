@@ -102,6 +102,7 @@ Vagrant & VirtualBox
 * Clone our repo, start and access the vm:
 
 .. code-block:: bash
+
     # clone
     git clone https://github.com/WWUDevOps/vagrantfile
 
