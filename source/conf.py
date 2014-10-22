@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'OSU DevOps Bootcamp'
+project = u'WWU DevOps Bootcamp'
 copyright = u'2013, OSU OSL & OSU LUG'
 
 # The version info for the project you're documenting, acts as replacement for
