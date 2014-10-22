@@ -110,7 +110,7 @@ Vagrant & VirtualBox
     mv vagrantfile devopsbootcamp-vagrant
 
     # start up
-    cd dveopsbootcamp-vagrant
+    cd devopsbootcamp-vagrant
     vagrant up
 
     # access vm
