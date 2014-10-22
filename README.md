@@ -1,7 +1,10 @@
 DevOps Bootcamp Website & Curriculum
 ====================================
 
-The site is hosted at
+WWU Version currently hosted at
+[sw.cs.wwu.edu/~griffi21/devops](https://sw.cs.wwu.edu/~griffi21/devops).
+
+OSU Version hosted at
 [devopsbootcamp.osuosl.org](http://devopsbootcamp.osuosl.org/en/latest/). 
 
 This repository has a post-commit hook set up to update the main site every
