@@ -17,7 +17,7 @@ Today's Agenda
     * Vocabulary
     * Get connected
     * Etiquette
-
+    * #wwucs, #wwu-devops, #wwu-alumni
 A note about notation
 ---------------------
 
@@ -45,14 +45,12 @@ How to get (to) Linux
 * When stuck on Windows, use `PuTTy`_:
 * Students::
 
-    ssh <onidusername>@shell.onid.oregonstate.edu
+    ssh <username>@linux.cs.wwu.edu
 
 
 .. figure:: /static/osm_server.jpg
     :align: right
     :scale: 50%
-
-* flip{1-3} are Engineering servers; less reliable
 
 .. _PuTTy: http://www.chiark.greenend.org.uk/~sgtatham/putty/
 
@@ -76,6 +74,16 @@ Virtual machines act as a full system on a physical machine
 
 Installing Linux on Virtualbox
 ------------------------------
+
+.. warning::
+  Your home directories in all CS labs are mounted over NFS. If you run a 
+  virtual machine from your home directory you will crash the file server and 
+  get your account disabled.
+  
+  You can stop this from happening by adding "export 
+  VAGRANT_HOME=/tmp/$USER-vagrant.d/" to your .bashrc (or .zshrc, etc.) and 
+  changing the virtualbox default machine location to /tmp. This setting can be
+  found in File -> Preferences -> General in Virtualbox.
 
 .. note:: 
   Try other distributions if you like to see what's different. Debian is a great
@@ -103,18 +111,18 @@ Vagrant & VirtualBox
 
 .. code-block:: bash
 
-    # clone
-    git clone https://github.com/WWUDevOps/vagrantfile
+  # clone
+  git clone https://github.com/WWUDevOps/vagrantfile
 
-    # rename
-    mv vagrantfile devopsbootcamp-vagrant
+  # rename
+  mv vagrantfile devopsbootcamp-vagrant
 
-    # start up
-    cd devopsbootcamp-vagrant
-    vagrant up
+  # start up
+  cd devopsbootcamp-vagrant
+  vagrant up
 
-    # access vm
-    vagrant ssh
+  # access vm
+  vagrant ssh
 
 Vagrant cheat sheet
 -------------------
