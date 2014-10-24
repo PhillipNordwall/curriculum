@@ -1,0 +1,967 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Version Control &mdash; WWU DevOps Bootcamp 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="WWU DevOps Bootcamp 0.0.1 documentation" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> WWU DevOps Bootcamp</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="get_involved.html">Get Involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_involved.html#mailing-list">Mailing list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_involved.html#irc">IRC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_involved.html#website-curriculum">Website &amp; Curriculum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_involved.html#meetings">Meetings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html">Policies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="policies.html#the-deal">&#8220;The Deal&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html#attendance">Attendance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html#laptops">Laptops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html#target-audience">Target Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="curriculum.html">Curriculum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-1-the-very-basics">Lesson 1: The Very Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-2-single-system-fundamentals">Lesson 2: Single System Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-3-editors-git">Lesson 3: Editors &amp; Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-4-scripting-troubleshooting">Lesson 4: Scripting &amp; Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-5-services-deploying-a-web-app">Lesson 5: Services &amp; Deploying a Web App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-6-boot-process-filesystem-hierarchy">Lesson 6: Boot Process &amp; Filesystem Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-7-databases">Lesson 7: Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#review-of-vm-and-app-setup">Review of VM and App Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-8-security-authentication">Lesson 8: Security &amp; Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-9-networking-overview">Lesson 9: Networking overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-10-dns">Lesson 10: DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-11-automation-and-devops">Lesson 11: Automation and DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-12-configuration-management">Lesson 12: Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curriculum.html#lesson-13-open-source-hands-on">Lesson 13: Open Source &amp; Hands-On</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">BootCamp Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#administrative-stuff">Administrative Stuff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Recommended Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#scripting">Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#systems-administration-tutorials">Systems Administration Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#open-source">Open Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#culture">Culture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-this-a-for-credit-class">Is this a for-credit class?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-does-it-cost">What does it cost?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#i-don-t-know-about-computers-can-i-still-join">I don&#8217;t know about computers! Can I still join?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#when-will-meetings-be">When will meetings be?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-this-only-for-students">Is this only for students?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-s-the-difference-between-bootcamp-and-regular-lug-meetings">What&#8217;s the difference between BootCamp and regular LUG meetings?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#i-wasn-t-able-to-participate-during-fall-term-can-i-still-join">I wasn&#8217;t able to participate during Fall term. Can I still join?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#i-have-a-question">I have a question?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whatisdevops.html">What is DevOps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mission.html">Purpose of DevOps BootCamp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mission.html#from-front-page">From front page:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mission.html#from-faq">From FAQ:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mission.html#the-deal">&#8220;The Deal&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mission.html#target-audience">Target Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant.html">Vagrant</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html#trying-linux-as-a-virtual-machine-with-vagrant">Trying Linux as a virtual machine with Vagrant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html#installing-virtualbox">Installing Virtualbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html#installing-vagrant">Installing Vagrant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html#testing-vagrant">Testing Vagrant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html#cloning-the-vagrant-repo">Cloning the Vagrant Repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html#using-vagrant">Using Vagrant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="00_introduction.html">DevOps Bootcamp Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#what-s-devops">What&#8217;s DevOps?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#what-s-bootcamp">What&#8217;s BootCamp?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#why-are-we-doing-this">Why are we doing this?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#what-you-ll-do">What you&#8217;ll do:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#can-you-do-it">Can you do it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#career-paths">Career Paths:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#osl-hiring">OSL Hiring:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#what-next">What next?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_the_very_basics.html">Lesson 1: The Very Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#today-s-agenda">Today&#8217;s Agenda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#a-note-about-notation">A note about notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#how-to-get-to-linux">How to get (to) Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#trying-linux-on-a-virtual-machine">Trying Linux on a Virtual Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#installing-linux-on-virtualbox">Installing Linux on Virtualbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#vagrant-virtualbox">Vagrant &amp; VirtualBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#vagrant-cheat-sheet">Vagrant cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#the-terminal">The Terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#basic-shell-commands">Basic Shell Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#invoking-a-script">Invoking a script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#file-paths">File Paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#special-characters">Special Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#type-less">Type less</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#help-get-me-out-of-here">Help, get me out of here!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#knowledge-check">Knowledge Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#more-about-man-pages">More about Man Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#asking-for-help">Asking for help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#irc">IRC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#a-client">A Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#networks">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#channels">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#commands">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#useful-tricks">Useful tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#screen-irssi-hints">Screen &amp; Irssi Hints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#etiquette">Etiquette</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_the_very_basics.html#review">Review</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_single_system_fundamentals.html">Lesson 2: Single System Fundamentals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#housekeeping">Housekeeping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#today-s-topics">Today&#8217;s Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#what-are-users">What are users?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#users-have">Users have</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#managing-users">Managing users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#passwords">Passwords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#root-superuser">Root/Superuser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#acting-as-another-user">Acting as another user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#what-are-groups">What are groups?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#hands-on-users-and-groups">Hands-On: Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#what-are-files">What are files?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#file-extensions">File extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#ls-l">ls -l</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#types-of-files">Types of files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#hands-on-files-and-permissions">Hands-On: Files and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#package-management">Package Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#rpm-yum-redhat-centos-fedora">RPM &amp; yum (RedHat, CentOS, Fedora)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#dpkg-apt-debian-ubuntu">DPKG &amp; Apt (Debian, Ubuntu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#language-specific-package-managers">Language-specific Package Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#other-package-managers">Other Package Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#installing-from-source">Installing from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#hands-on-package-management">Hands-on: Package Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_single_system_fundamentals.html#questions">Questions:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="homework02.html">Lesson 2: Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_editors_git.html">Lesson 3: Editors &amp; Version Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#check-in-from-last-week">Check in from last week</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#what-we-ll-discuss">What we&#8217;ll discuss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#how-do-you-edit-files">How do you edit files?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#no-never-ever-edit-code-in-word-libreoffice">No. Never, Ever edit code in Word/LibreOffice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#then-what-should-you-use">Then what should you use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#integrated-development-environments">Integrated Development Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#sysadmin-tools">Sysadmin tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#features-of-an-editor">Features of an editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#text-editors">Text Editors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#emacs">Emacs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#how-to-choose">How to choose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#modes">Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#commands">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#moving-around">Moving Around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#configuration-customization">Configuration / customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#learning-resources">Learning Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#regular-expressions">Regular expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#editor-questions">Editor questions?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_editors_git.html#lesson-3-intro-to-git">Lesson 3: Intro to Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#version-control-is-hard">Version Control is Hard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#why-bother">Why Bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#better-options-version-control">Better Options: Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#git">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#using-git-locally">Using Git Locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#more-on-commits">More on commits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#what-not-to-do">What Not To Do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#daily-workflow">Daily workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_editors_git.html#lesson-3-github">Lesson 3: GitHub</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#let-s-walk-through">Let&#8217;s Walk Through</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#help-everythings-s-broken">Help, Everythings&#8217;s Broken!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#learn-more">Learn More</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_editors_git.html#hands-on">Hands-On</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_scripting_troubleshooting.html">Lesson 4: Scripting, Troubleshooting, &amp; Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#agenda">Agenda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#scripting">Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#what-s-a-script">What&#8217;s a script?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#what-s-a-scripting-language">What&#8217;s a scripting language?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#common-scripting-languages">Common Scripting Languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#bash">Bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#why-python">Why Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#informal-method">Informal method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#if-it-used-to-work">If it used to work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#if-it-s-never-worked-for-you">If it&#8217;s never worked for you</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#after-finding-the-problem">After finding the problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#formal-method">Formal method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#how-to-get-help">How to get help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#sources-of-trouble">Sources of trouble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#tickets">Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#tickets-vs-issues">Tickets vs. Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_scripting_troubleshooting.html#some-examples">Some Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05_services_app.html">Lesson 5: Web Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#what-is-a-web-app">What is a web app?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#what-is-this-virtual-environment-thing">What is this Virtual Environment thing?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#frameworks">Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#the-systemview-app">The SystemView app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#setting-up">Setting Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#id1">Setting Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#get-the-code">Get the Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#run-the-code">Run the Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#fail">Fail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#pip">Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#install-what-s-missing">Install What&#8217;s Missing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#run-and-test">Run and Test!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#branch-and-modify">Branch and Modify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_services_app.html#homework">Homework</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="06_boot_filesystem.html">Lesson 6: Boot and the Filesystem Hierarchy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#the-linux-filesystem-hierarchy">The Linux Filesystem Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#filesystem-can-mean">Filesystem can mean:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#the-file-system">The File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#installed-programs-and-utilities">Installed programs and utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#user-specific-data-configuration">User-Specific Data &amp; Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#where-are-drives-mounted">Where are drives mounted?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#space-on-drives">Space on drives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#three-tiers-of-filesystem-hierarchy">Three Tiers of Filesystem Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#common-directories">Common Directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#id1">Common Directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#proc-has-lots-of-useful-system-information">/proc has lots of useful system information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#commands-for-working-with-filesystems">Commands for working with filesystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#devfs">devfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#blocks-and-dd">Blocks and dd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#filesystem-consistency">Filesystem Consistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#more-about-journaling">More about Journaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#the-boot-process">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#bootstrapping">Bootstrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#steps-in-boot-process">Steps in boot process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#booting">Booting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#boot-loaders-grub">Boot Loaders (Grub)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#single-user-mode">Single User Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#startup-script-tasks">Startup Script Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#system-v-boot-style">System-V Boot Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#etc-inittab">/etc/inittab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#init-d-scripts">init.d Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#starting-services-on-boot">Starting services on boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#configuring-init-d-scripts">Configuring init.d Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#shutting-down">Shutting Down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_boot_filesystem.html#homework">Homework</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07_database_integration.html">Lesson 7: Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#filesystems-review-questions">Filesystems Review Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#but-what-about-our-poor-data">But what about our poor data?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#enter-the-database">Enter the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#relational-algebra-visualized">Relational Algebra Visualized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#installing-mysql">Installing MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#managing-mysql">Managing MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#users-permissions">Users &amp; Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#importing-data">Importing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#basic-queries">Basic Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#select">SELECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#practice">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#insert">INSERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id1">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#update">UPDATE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id2">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#delete">DELETE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#further-reading-resources-etc">Further Reading, Resources, etc.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#hands-on-make-a-database">Hands-On: Make a Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#databases-in-applications">Databases in Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#native-sql">Native SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#introducing-the-orm">Introducing the ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#life-with-a-python-orm">Life With a Python ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#setting-up-the-magic-sqlalchemy">Setting Up the Magic - SqlAlchemy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#let-s-databasify-systemview">Let&#8217;s Databasify Systemview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#hands-on">Hands On</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#hands-on-cont">Hands On (Cont...)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#goals">Goals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="08_security_auth.html">Lesson 8: Security &amp; Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#what-is-security">What is security?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#types-of-security">Types of security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#authentication-vs-authorization">Authentication vs. Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#identity">Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#id1">Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#principle-of-least-authority">Principle of Least Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#system-security">System Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#other-attacks">Other Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#what-to-do-if-you-discover-a-vulnerability">What to do if you discover a vulnerability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#passwords">Passwords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#good-passwording">Good Passwording</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#server-side">Server Side</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#password-managers">Password Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#keys">Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#key-exchange">Key Exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#rsa">RSA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#brief-history-of-time-line-of-gpg">Brief History of Time (line of GPG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#gpg">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#ways-to-use-gpg">Ways to use GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#certificates-and-http">Certificates and HTTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#man-in-the-middle">Man in the Middle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#wifi">WiFi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#crypto-wares">Crypto-wares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#math">Math!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#one-last-thing">One Last Thing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="08_security_auth.html#lesson-8-web-application-security">Lesson 8: Web application security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#web-application-security">Web application security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#code-injection">Code Injection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#web-server-specific-attacks">Web Server-Specific Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#problems-with-design-and-implementation">Problems with Design and Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#what-not-to-do-the-exercise">What Not to Do: The Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#getting-up-to-date">Getting Up to Date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_security_auth.html#let-s-check-out-dean-s-not-so-awesome-code">Let&#8217;s Check out Dean&#8217;s (not so) Awesome Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="09_networking.html">Lesson 9: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#who-is-this-talk-for">Who is this talk for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#what-is-a-network">What is a network?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#what-is-a-protocol">What is a protocol?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#the-osi-model">The OSI Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#layer-1-physical">Layer 1: Physical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#layer-2-data-link">Layer 2: Data Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#layer-3-network">Layer 3: Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#layer-4-transport">Layer 4: Transport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#get-your-hands-dirty">Get your hands dirty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#example-output">Example output:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#netmask">Netmask:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#netmask-example">Netmask Example:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#id1">Netmask Example:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#id2">Netmask Example:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#routes">Routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#bootstrapping">Bootstrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#static-configuration">Static Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#dynamic-configuration">Dynamic Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#reserved-ipv4-addresses">Reserved IPv4 Addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#public-vs-private-address">Public vs Private Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#network-devices">Network Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#id3">Network Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#control-layer">Control Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_networking.html#collisions">Collisions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10_dns.html">Lesson 10: Networking part 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#agenda">Agenda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#networking-review">Networking Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#id1">Networking Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#id2">Networking Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#id3">Networking Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#id4">Networking Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#intro-to-dns">Intro to DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#how-do-i-know-where-the-page-came-from">How do I know where the page came from?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#osl">OSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#dns">DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#hierarchy-of-domains">Hierarchy of domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#pop-quiz">Pop quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#recursive-dns">Recursive DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#non-recursive">Non-recursive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#another-quiz">Another Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#etc-resolv-conf">/etc/resolv.conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#etc-hosts">/etc/hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#load-balancing">Load Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#records">Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#reverse-dns">Reverse DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#web-apps-a-bit-of-review">Web Apps: A Bit of Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#what-we-want-to-do">What We Want To Do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#why">Why?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#what-is-a-web-server">What is a Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#webservers-talk-http">Webservers Talk HTTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#a-digression-ajax-json-and-apis">A Digression: AJAX, JSON and APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#ajax">AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#json">JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#xml">XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#apis">APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#let-s-install-a-web-server">Let&#8217;s Install a Web Server!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#apache">Apache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#let-s-serve-some-web">Let&#8217;s Serve Some Web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#but-first-config-files">But First, Config Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#wait-what-am-i-writing-again">Wait, What am I Writing Again?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#voila">Voila!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#but-i-want-to-run-code">But I Want to Run Code!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#what-went-wrong">What Went Wrong?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#voila-again">Voila, Again.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#ok-but-i-want-to-serve-a-python-app">Ok, But I Want To Serve a Python App...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#sounds-great-let-s-go">Sounds Great, Let&#8217;s Go!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#don-t-forget-virtualenv">Don&#8217;t Forget Virtualenv!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#what-makes-an-app-wsgi">What Makes an App WSGI?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#configuring-apache-for-systemview">Configuring Apache for Systemview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#even-more-voila">Even More Voila</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_dns.html#homework">Homework</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="11_devops.html">Lesson 11: Devops &amp; Configuration Management Intro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#session-summary">Session Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#devops-introduction">Devops Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#definition-of-devops">Definition of Devops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#the-old-view">The old view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#history-of-devops">History of Devops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#the-agile-approach">The Agile Approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#adapting-agile-to-ops">Adapting Agile to Ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#better-tools-enable-devops">Better Tools enable Devops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#it-s-not-noops">It&#8217;s not NoOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#what-is-devops-video">What is Devops Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#devops-explained-no-horse-manure">Devops Explained: No Horse Manure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#configuration-management">Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#history-of-cm">History of CM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#infrastructure-as-code">Infrastructure as code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#cm-platforms">CM Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#cm-platforms-part-2">CM Platforms (part 2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#puppet-example">Puppet Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#chef-example">Chef Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#cm-platform-comparison">CM Platform Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#traditional-development-workflow">Traditional Development Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#email-1">Email #1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#email-2">Email #2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#email-3">Email #3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#email-4">Email #4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#email-5">Email #5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#email-6">Email #6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#devops-workflow">DevOps Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#irc-1">IRC #1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#irc-2">IRC #2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#irc-3">IRC #3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#irc-4">IRC #4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#non-devops">Non-DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_devops.html#devops">DevOps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_configmgmt.html">Lesson 12: Configuration Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#large-site-management">Large site management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#what-config-management-does">What config management does</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#configuration-management">Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#cf-management-tools">CF Management Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#declarative-configuration">Declarative Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#puppet-resources">Puppet Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#resources-have-attributes">Resources Have Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#puppet-manifests">Puppet Manifests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#pull-the-strings">Pull the Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#declarations-are-idempotent">Declarations Are Idempotent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#packages-and-services">Packages and Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#puppet-config">Puppet Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#etc-puppet">/etc/puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#the-site-manifest">The Site Manifest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#but-first-nodes">But First, Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#an-example-site-manifest">An Example Site Manifest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#the-master-and-the-agent">The Master and the Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#the-agent">The Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#module-structure">Module Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#the-bootcamp-apache-module">The Bootcamp Apache Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#site-pp-modularized">Site.pp Modularized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#community-modules">Community Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#the-bootcamp-mysql-module">The Bootcamp Mysql Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#databases-users-and-grants">Databases, Users, and Grants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#test-it-out">Test It Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_configmgmt.html#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_opensource.html">Lesson 13: Contributing to Open Source</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#getting-started-in-open-source">Getting started in Open Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#joining-vs-starting-a-project">Joining vs Starting a Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#know-your-licenses">Know your licenses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#assessing-a-new-community">Assessing a new community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#getting-involved">Getting involved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#finding-a-project">Finding a project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#devops-concerns">DevOps Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#your-homework">Your Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_opensource.html#questions">Questions?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_review.html">Lesson 14: Review</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#today-s-goals">Today&#8217;s Goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#how-to-set-up-a-vm">How to set up a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#enable-virtualbox-vt-extensions">Enable VirtualBox (VT extensions)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#linux">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#irc">IRC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#github-account">GitHub Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#joining-the-github-org">Joining the Github Org</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#installing-the-web-app">Installing the Web App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#prerequisite-tools">Prerequisite tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#the-magic-script">The Magic Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#branches">Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#connecting-to-the-app">Connecting to the App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#where-am-i">Where am I?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#in-virtual-machine">In virtual machine?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#in-a-repo">In a repo?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_review.html#on-a-branch">On a branch?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="16_email.html">Lesson 16: Email</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#email-system-components">Email: System Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#id1">Email: System Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#transport-agents">Transport Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#delivery-agents-message-stores">Delivery Agents &amp; Message Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#anatomy-of-a-mail-message">Anatomy of a Mail Message</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#mta-log-files">MTA Log Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#configuring-postfix">Configuring Postfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#sendmail">Sendmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#email-viruses-spam">Email: Viruses &amp; Spam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#email-infrastructure-implementation">Email: Infrastructure Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_email.html#email-security">Email: Security</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">WWU DevOps Bootcamp</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Version Control</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/daycamp_introtrack_session3.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="version-control">
+<h1>Version Control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h1>
+<p>(and nano)</p>
+<div class="section" id="what-we-ll-cover">
+<h2>What We&#8217;ll Cover<a class="headerlink" href="#what-we-ll-cover" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Nano, a command line editor</li>
+<li>What&#8217;s Git</li>
+<li>What&#8217;s GitHub</li>
+<li>Setting up an account</li>
+<li>Adding a project</li>
+<li>Contributing to someone else&#8217;s project</li>
+<li>Help, everything&#8217;s broken!</li>
+<li>More resources</li>
+</ul>
+</div>
+<div class="section" id="nano">
+<h2>Nano<a class="headerlink" href="#nano" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>type like normal</li>
+<li>Use arrow keys to move around</li>
+<li>^ means hold control while pressing the key</li>
+</ul>
+<div class="figure align-center">
+<img alt="_images/nano.png" src="_images/nano.png" />
+</div>
+</div>
+<div class="section" id="version-control-is-hard">
+<h2>Version Control is Hard<a class="headerlink" href="#version-control-is-hard" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/xkcd_1296.png"><img alt="_images/xkcd_1296.png" src="_images/xkcd_1296.png" style="width: 658.5px; height: 375.0px;" /></a>
+</div>
+<p>Image from <a class="reference external" href="http://xkcd.com/1296">XKCD</a></p>
+</div>
+<div class="section" id="why-bother">
+<h2>Why Bother?<a class="headerlink" href="#why-bother" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="_images/phd_final.gif"><img alt="_images/phd_final.gif" src="_images/phd_final.gif" style="width: 450.0px; height: 600.0px;" /></a>
+</div>
+<p>Image from
+<a class="reference external" href="http://www.phdcomics.com/comics/archive.php?comicid=1531">PhD Comics</a></p>
+</div>
+<div class="section" id="better-options-version-control">
+<h2>Better Options: Version Control<a class="headerlink" href="#better-options-version-control" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Commit = Snapshot of part of your project&#8217;s state</p>
+</li>
+<li><p class="first">Centralized (SVN, CVS) vs. Decentralized (Git, hg)</p>
+</li>
+<li><dl class="first docutils">
+<dt>We&#8217;ll look at Git today</dt>
+<dd><ul class="first last simple">
+<li>Easier to learn other VCS from Git</li>
+<li>Widely used in the open source world</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="git">
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-left">
+<img alt="_images/Linus_Torvalds.jpeg" src="_images/Linus_Torvalds.jpeg" />
+</div>
+<p>git, noun. Brit.informal.
+1. an unpleasant or contemptible person.</p>
+</div>
+<div class="section" id="setting-up-git">
+<h2>Setting up Git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>In VM:</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo yum install git
+<span class="nv">$ </span>git config --global user.name <span class="s2">&quot;My Name&quot;</span>
+<span class="nv">$ </span>git config --global user.email <span class="s2">&quot;myself@gmail.com&quot;</span>
+<span class="nv">$ </span>git config --global core.editor <span class="s2">&quot;nano&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-git-locally">
+<h2>Using Git Locally<a class="headerlink" href="#using-git-locally" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">init</span></tt></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This initializes a git repo. Use <cite>man git-init</cite> for more info.</p>
+</div>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;filename&gt;</span></tt></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This puts &lt;filename&gt; into the staging area. It isn&#8217;t committed yet.
+Use <tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></tt> to see what changes aren&#8217;t yet in staging.</p>
+</div>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;I</span> <span class="pre">did</span> <span class="pre">a</span> <span class="pre">thing!&quot;</span></tt></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This actually makes the commit. Use <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> to see what&#8217;s in
+staging but not yet committed. Use <tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span></tt> or <tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt> to see
+recent commits.</p>
+</div>
+<ul class="simple">
+<li>Undo things?
+the <a class="reference external" href="http://git-scm.com/book/en/Git-Basics-Undoing-Things">git book</a> explains
+well</li>
+<li>Did I remember to commit that?</li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">status</span></tt></p>
+<ul class="simple">
+<li>What commits have I made lately?</li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">log</span></tt></p>
+</div>
+<div class="section" id="what-not-to-do">
+<h2>What Not To Do<a class="headerlink" href="#what-not-to-do" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Don&#8217;t delete the .git files</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you kill them, git loses its memory :(</p>
+</div>
+<ul>
+<li><p class="first">Avoid redundant copies of the same work in one revision</p>
+</li>
+<li><dl class="first docutils">
+<dt>Don&#8217;t make &#8220;oops, undoing that&#8221; commits.</dt>
+<dd><ul class="first last simple">
+<li>Use git commit &#8211;amend or git revert</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Amending is fine as long as you haven&#8217;t pushed yet. It&#8217;s generally a
+bad idea to amend or rebase work that you&#8217;ve already shared with others,
+unless you really know what you&#8217;re doing.</p>
+</div>
+<ul>
+<li><dl class="first docutils">
+<dt>Don&#8217;t wait too long between commits</dt>
+<dd><ul class="first last simple">
+<li>You can squash them all together later</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Commit every time you think you might want to return to the current
+state. You can revert back to any previous commit, but there is no way to
+magically add a commit in where you forgot to make one.</p>
+</div>
+<ul class="simple">
+<li>Don&#8217;t commit secrets...</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Yes, there are ways to sort of take them down off of GitHub, but
+somebody might have cloned your repo while it had the secrets in. Once
+someone has a piece of information, you can&#8217;t just take it away.</p>
+</div>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="_images/dont_do_this.jpg"><img alt="_images/dont_do_this.jpg" src="_images/dont_do_this.jpg" style="width: 320.0px; height: 189.5px;" /></a>
+</div>
+<p><a class="reference external" href="http://arstechnica.com/security/2013/01/psa-dont-upload-your-important-passwords-to-github/">http://arstechnica.com/security/2013/01/psa-dont-upload-your-important-passwords-to-github/</a></p>
+</div>
+<div class="section" id="daily-workflow">
+<h2>Daily workflow<a class="headerlink" href="#daily-workflow" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="_images/gitflow.png"><img alt="_images/gitflow.png" src="_images/gitflow.png" style="width: 458.25px; height: 611.25px;" /></a>
+</div>
+<p>Pull -&gt; Work -&gt; Add changes -&gt; Commit -&gt; Push</p>
+<p>Larger projects have more complex workflows</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The picture is of the Git Flow branching model, and you&#8217;ll probably
+see it every single time anyone explains Git branching and merging to you.</p>
+</div>
+</div>
+<div class="section" id="github">
+<h2>GitHub!<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/octocat.jpg" src="_images/octocat.jpg" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>GitHub serves a threefold purpose:</p>
+<ul class="simple">
+<li>Makes it easier to manage permissions &amp; share code with others</li>
+<li>Backs up all your work in case bad things happen to your laptop</li>
+<li>Social/gamification/resume building</li>
+</ul>
+<p class="last">It also has <a class="reference external" href="https://help.github.com/">amazing documentation</a> which you
+should all go read right now and consult whenever you&#8217;re the least bit
+confused. It&#8217;s like the Ubuntu forums in that it&#8217;s explained in a way the
+newbies can understand, but unlike them in that it&#8217;s all written by people
+who know what they&#8217;re doing.</p>
+</div>
+</div>
+<div class="section" id="let-s-walk-through">
+<h2>Let&#8217;s Walk Through<a class="headerlink" href="#let-s-walk-through" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>Creating an account</dt>
+<dd><ul class="first last simple">
+<li>Gravatar</li>
+<li>How to read a profile</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>you just go to github.com and click the account creation links. To
+make a custom icon, go to gravatar.com and set up an account using the
+same email address as you used for github. The picture you upload on
+Gravatar will then show up for your github account.</p>
+<p class="last">The most important thing about reading profiles is that not all of a
+person&#8217;s repos will display on the front page of their profile &#8211; to see
+them, got to the &#8216;repositories&#8217; tab instead of &#8216;contributions&#8217;.</p>
+</div>
+<ul class="simple">
+<li>Creating SSH keys</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span></tt>
+accept most defaults; give it a passphrase; write yourself a hint for the
+passphrase somewhere. For instance if the passphrase is the funny way that
+your friend misheard a song lyric, you might write down the initials of
+the venue where you went to go see that band with that person. Basically
+you want to pick a hint that&#8217;s meaningful to you but likely to be
+meaningless to anyone else.</p>
+</div>
+<ul class="simple">
+<li>Uploading your SSH key</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">account settings (icon in upper right) -&gt; ssh keys (in menu on left)</p>
+</div>
+<ul class="simple">
+<li>Creating a new repository</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">icon in upper right</p>
+</div>
+<ul class="simple">
+<li>Fork somebody else&#8217;s repo</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">button in upper right on repo main page</p>
+</div>
+<ul class="simple">
+<li>Edit files online</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">navigate to file, edit button is in the upper right of where the
+file is displayed</p>
+</div>
+<ul class="simple">
+<li>Submit a pull request</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">on main repo, it&#8217;s that green button with the arrows just to the
+left of where it says which branch you&#8217;re on</p>
+</div>
+</div>
+<div class="section" id="help-everythings-s-broken">
+<h2>Help, Everythings&#8217;s Broken!<a class="headerlink" href="#help-everythings-s-broken" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>Permission denied <span class="o">(</span>publickey<span class="o">)</span>.
+fatal: The remote end hung up unexpectedly
+</pre></div>
+</div>
+<p>Solution: <tt class="docutils literal"><span class="pre">ssh-add</span> <span class="pre">~/.ssh/id-rsa</span></tt> or whatever key you have added on github</p>
+<div class="highlight-bash"><div class="highlight"><pre>To git@github.com:edunham/slides.git
+ ! <span class="o">[</span>rejected<span class="o">]</span>        master -&gt; master <span class="o">(</span>non-fast-forward<span class="o">)</span>
+error: failed to push some refs to <span class="s1">&#39;git@github.com:edunham/slides.git&#39;</span>
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes <span class="o">(</span>e.g. <span class="s1">&#39;git pull&#39;</span><span class="o">)</span>
+hint: before pushing again.
+hint: See the <span class="s1">&#39;Note about fast-forwards&#39;</span> in <span class="s1">&#39;git push --help&#39;</span> <span class="k">for </span>details.
+</pre></div>
+</div>
+<p>Solution: To avoid a messy merge commit, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">--rebase</span></tt>.</p>
+</div>
+<div class="section" id="other-resources">
+<h2>Other Resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.wei-wang.com/ExplainGitWithD3/#">Git Visualizations</a></p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, OSU OSL &amp; OSU LUG.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
