@@ -86,13 +86,13 @@ Installing Linux on Virtualbox
   found in File -> Preferences -> General in Virtualbox.
 
 .. note:: 
-  Try other distributions if you like to see what's different. Debian is a great
-  next step to try out.
+  Try other distributions if you like to see what's different. Fedora or Manjaro are great next
+  steps to try out.
 
 #. Download and install: https://www.virtualbox.org/wiki/Downloads
-#. Grab the latest minimal ISO: http://centos.osuosl.org/6/isos/x86_64/
+#. Grab the latest minimal ISO: http://cdimage.debian.org/debian-cd/current/amd64/iso-cd/ 
 #. Create VM
-    #. New -> Name "CentOS" -> Default Ram -> Default Disk settings
+    #. New -> Name "Debian" -> Default Ram -> Default Disk settings
     #. Settings -> Storage -> Empty -> CD/DVD Drive -> Select ISO
     #. Start -> press enter -> Skip media check
 #. ``\o/``
@@ -101,8 +101,7 @@ Vagrant & VirtualBox
 --------------------
 
 .. note::
-  We're using CentOS as our base image for now but will use Debian later. You
-  can see the gui by uncommenting the line in the Vagrantfile.
+  You can see the gui by uncommenting the line in the Vagrantfile.
 
 * Vagrant is a tool used with Virtualbox (and other) platforms
 * Make a reproducible pre-installed Linux environment
