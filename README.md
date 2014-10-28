@@ -16,7 +16,7 @@ readthedocs to investigate what it reports is broken.
 Viewing Slides: 
 ---------------
 
-Slides are available on http://slides.osuosl.org/devopsbootcamp/ , and rebuild
+Slides are available on https://wwudevops.github.io/slides , and rebuild
 automatically whenever new content is pushed to the master branch of this repo.
 
 The script in scripts/build.sh automatically removes the slides that were built
