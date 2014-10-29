@@ -10,7 +10,7 @@ of minutes, the build may have failed. Check that `make html` doesn't throw
 any errors in your copy of the repo, and ask someone with admin access on
 readthedocs to investigate what it reports is broken.
 
-## Viewing Slides:
+## Viewing Slides
 
 Slides are available at [wwudevops.github.io/slides][WWU DevOps Slides], and
 rebuilt automatically whenever new content is pushed to the master branch of
@@ -24,7 +24,7 @@ You can also build the slides locally if you've been editing them and want to
 see how they'll look before you push, or if you don't have push access to the
 project: 
 
-## Installing Dependencies:
+## Installing Dependencies
 
 ### Debian and Ubuntu
     sudo apt-get install build-essential
@@ -39,22 +39,30 @@ project:
     
 ### Installing Python Libraries
     sudo pip install virtualenv
-    git clone https://github.com/DevOpsBootcamp/website.git
+    git clone https://github.com/WWUDevOps/website.git
     virtualenv website
     cd website
 
 Enter the virtual environment.
-
     source bin/activate
+
+Install the requirements.
     pip install -r requirements.txt
+
+## Building
 
 Output lives in `build/` and the stuff you want to edit is in `source/`. Images
 and things go in `source/static/`.
 
-    make slides # slides will go to build/slides
-    make html # to preview roughly how it'll look on readthedocs
+Slides will go to `build/slides`.
+    make slides
 
-    deactivate # leave the virtual environment
+To preview roughly how it'll look on
+[wwudevops.github.io/website][WWU DevOps Website].
+    make html
+
+Leave the virtual environment.
+    deactivate
 
 <!-- Links -->
 [WWU DevOps Website]: https://wwudevops.github.io/website
