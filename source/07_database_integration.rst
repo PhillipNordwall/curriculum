@@ -64,22 +64,42 @@ Relational Algebra Visualized
    
 .. note:: joins are the principle use of relations.
 
-Installing MySQL
+Installing MariaDB (better, open source MySQL)
+----------------------------------------------
+.. code-block:: bash
+
+    $ sudo apt-get install python-software-properties
+    
+    # Add MariaDB repositories
+    $ sudo vim /etc/apt/sources.list.d/mariadb.list
+
+    # Add these lines
+    deb http://mirror.jmu.edu/pub/mariadb/repo/10.0/debian wheezy main
+    deb-src http://mirror.jmu.edu/pub/mariadb/repo/10.0/debian wheezy main
+
+    # Import repository GPG key
+    sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+
+    # Install MariaDB
+    sudo apt-get update && sudo apt-get install mariadb-server mariadb-client
+
+
+
+Managing MariaDB
 ----------------
 
 .. code-block:: bash
 
-    $ yum install mysql-server
-    $ /sbin/service mysqld start
-    $ /usr/bin/mysql_secure_installation
+    # Check if MariaDB is running
+    $ sudo service mysql status
 
-Managing MySQL
---------------
-
-.. code-block:: bash
-
-    $ /sbin/service mysqld status
+    # Start/Stop/Restart MariaDB
+    $ sudo service mysql start/stop/restart
+    
+    # Check if database server is up
     $ mysqladmin -p ping
+
+    # Create table
     $ mysqladmin -p create nobel
 
 Configuration
@@ -90,12 +110,8 @@ Configuration
 - ``/etc/my.conf``
 - The most important MySQL tuning rule: 
 
-   - almost always prefer **InnoDB**
+   - almost always prefer **InnoDB** (MariaDB default)
  
-.. note:: 
-    we're going to add: 
-    ``default_storage_engine         = InnoDB``
-
 Users & Permissions
 -------------------
 
@@ -117,14 +133,69 @@ Importing Data
 
 .. code-block:: bash
 
-    $ wget http://osl.io/nobel -O nobel.sql
-    $ mysql -p nobel < nobel.sql
+    $ wget https://sw.cs.wwu.edu/~griffi21/nobel.mysql
+    $ mysql -p nobel < nobel.mysql
     $ mysql -p nobel
 
 .. code-block:: sql
 
     SHOW TABLES;
     DESCRIBE nobel;
+
+
+Installing PostgreSQL (Usually pronounced Postgres)
+---------------------------------------------------
+
+.. code-block:: bash
+
+  $ sudo apt-get install postgresql postgresql-client
+
+Managing PostgreSQL
+-------------------
+
+.. code-block:: bash
+
+  # Check if PostgreSQL is running
+  $ sudo service postgresql status
+  
+  # Start/Stop/Restart Postgres
+  $ sudo service postgresql start/stop/restart
+
+Configuration
+-------------
+
+- /etc/postgresql/<version>/postgresql.conf
+  
+  - Version is probably 9.1
+
+Users & Permissions
+-------------------
+
+.. code-block:: bash
+
+  $ sudo su postgres
+  $ psql
+
+.. code-block:: sql
+
+  postgres=# CREATE USER vagrant WITH PASSWORD 'password';
+  postgres=# CREATE DATABASE nobel OWNER vagrant;
+
+Importing Data
+--------------
+
+.. code-block:: bash
+
+  $ wget https://sw.cs.wwu.edu/~griffi21/nobel.psql
+  $ psql nobel < nobel.psql
+
+.. code-block:: sql
+
+  # Show tables
+  postgres=# \dt
+
+  # Describe nobel table
+  postgres=# \d+ nobel
 
 Basic Queries
 -------------
