@@ -64,7 +64,7 @@ Relational Algebra Visualized
    
 .. note:: joins are the principle use of relations.
 
-Installing MariaDB (better, open source MySQL)
+Installing MariaDB ([better](https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-features/), open source MySQL)
 ----------------------------------------------
 .. code-block:: bash
 
