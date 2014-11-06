@@ -81,7 +81,7 @@ Installing Linux on Virtualbox
   get your account disabled.
   
   You can stop this from happening by adding "export 
-  VAGRANT_HOME=/tmp/$USER-vagrant.d/" to your .bashrc (or .zshrc, etc.) and 
+  VAGRANT_HOME=/tmp/$USER-vagrant.d" to your .bashrc (or .zshrc, etc.) and 
   changing the virtualbox default machine location to /tmp. This setting can be
   found in File -> Preferences -> General in Virtualbox.
 
