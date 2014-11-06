@@ -111,13 +111,10 @@ Vagrant & VirtualBox
 .. code-block:: bash
 
   # clone
-  git clone https://github.com/WWUDevOps/vagrantfile
-
-  # rename
-  mv vagrantfile devopsbootcamp-vagrant
+  git clone https://github.com/WWUDevOps/WWUDevOpsVagrant
 
   # start up
-  cd devopsbootcamp-vagrant
+  cd WWUDevOpsVagrant
   vagrant up
 
   # access vm
