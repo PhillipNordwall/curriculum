@@ -320,18 +320,23 @@
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#enter-the-database">Enter the Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#structure">Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#relational-algebra-visualized">Relational Algebra Visualized</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#installing-mysql">Installing MySQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#managing-mysql">Managing MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#installing-mariadb-better-open-source-mysql">Installing MariaDB (better, open source MySQL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#managing-mariadb">Managing MariaDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#configuration">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#users-permissions">Users &amp; Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#importing-data">Importing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#installing-postgresql-usually-pronounced-postgres">Installing PostgreSQL (Usually pronounced Postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#managing-postgresql">Managing PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id1">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id2">Users &amp; Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id3">Importing Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#basic-queries">Basic Queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#select">SELECT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#practice">Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#insert">INSERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id1">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id4">Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#update">UPDATE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id2">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#id5">Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#delete">DELETE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#further-reading-resources-etc">Further Reading, Resources, etc.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_database_integration.html#hands-on-make-a-database">Hands-On: Make a Database</a></li>
@@ -739,7 +744,7 @@
 virtual machine from your home directory you will crash the file server and
 get your account disabled.</p>
 <p class="last">You can stop this from happening by adding &#8220;export
-VAGRANT_HOME=/tmp/$USER-vagrant.d/&#8221; to your .bashrc (or .zshrc, etc.) and
+VAGRANT_HOME=/tmp/$USER-vagrant.d&#8221; to your .bashrc (or .zshrc, etc.) and
 changing the virtualbox default machine location to /tmp. This setting can be
 found in File -&gt; Preferences -&gt; General in Virtualbox.</p>
 </div>
@@ -780,13 +785,10 @@ steps to try out.</p>
 <li>Clone our repo, start and access the vm:</li>
 </ul>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># clone</span>
-git clone https://github.com/WWUDevOps/vagrantfile
-
-<span class="c"># rename</span>
-mv vagrantfile devopsbootcamp-vagrant
+git clone https://github.com/WWUDevOps/WWUDevOpsVagrant
 
 <span class="c"># start up</span>
-<span class="nb">cd </span>devopsbootcamp-vagrant
+<span class="nb">cd </span>WWUDevOpsVagrant
 vagrant up
 
 <span class="c"># access vm</span>

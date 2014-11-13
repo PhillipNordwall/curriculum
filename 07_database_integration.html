@@ -320,18 +320,23 @@
 <li class="toctree-l2"><a class="reference internal" href="#enter-the-database">Enter the Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#structure">Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#relational-algebra-visualized">Relational Algebra Visualized</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-mysql">Installing MySQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-mysql">Managing MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-mariadb-better-open-source-mysql">Installing MariaDB (better, open source MySQL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-mariadb">Managing MariaDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#users-permissions">Users &amp; Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#importing-data">Importing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-postgresql-usually-pronounced-postgres">Installing PostgreSQL (Usually pronounced Postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-postgresql">Managing PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Users &amp; Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Importing Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#basic-queries">Basic Queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#select">SELECT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#practice">Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#insert">INSERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#update">UPDATE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#delete">DELETE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#further-reading-resources-etc">Further Reading, Resources, etc.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hands-on-make-a-database">Hands-On: Make a Database</a></li>
@@ -679,18 +684,37 @@ returning</p>
 <p class="last">joins are the principle use of relations.</p>
 </div>
 </div>
-<div class="section" id="installing-mysql">
-<h2>Installing MySQL<a class="headerlink" href="#installing-mysql" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>yum install mysql-server
-<span class="nv">$ </span>/sbin/service mysqld start
-<span class="nv">$ </span>/usr/bin/mysql_secure_installation
+<div class="section" id="installing-mariadb-better-open-source-mysql">
+<h2>Installing MariaDB (<a class="reference external" href="https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-features/">better</a>, open source MySQL)<a class="headerlink" href="#installing-mariadb-better-open-source-mysql" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install python-software-properties
+
+<span class="c"># Add MariaDB repositories</span>
+<span class="nv">$ </span>sudo vim /etc/apt/sources.list.d/mariadb.list
+
+<span class="c"># Add these lines</span>
+deb http://mirror.jmu.edu/pub/mariadb/repo/10.0/debian wheezy main
+deb-src http://mirror.jmu.edu/pub/mariadb/repo/10.0/debian wheezy main
+
+<span class="c"># Import repository GPG key</span>
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+
+<span class="c"># Install MariaDB</span>
+sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install mariadb-server mariadb-client
 </pre></div>
 </div>
 </div>
-<div class="section" id="managing-mysql">
-<h2>Managing MySQL<a class="headerlink" href="#managing-mysql" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/sbin/service mysqld status
+<div class="section" id="managing-mariadb">
+<h2>Managing MariaDB<a class="headerlink" href="#managing-mariadb" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Check if MariaDB is running</span>
+<span class="nv">$ </span>sudo service mysql status
+
+<span class="c"># Start/Stop/Restart MariaDB</span>
+<span class="nv">$ </span>sudo service mysql start/stop/restart
+
+<span class="c"># Check if database server is up</span>
 <span class="nv">$ </span>mysqladmin -p ping
+
+<span class="c"># Create table</span>
 <span class="nv">$ </span>mysqladmin -p create nobel
 </pre></div>
 </div>
@@ -703,16 +727,11 @@ returning</p>
 <li><p class="first">The most important MySQL tuning rule:</p>
 <blockquote>
 <div><ul class="simple">
-<li>almost always prefer <strong>InnoDB</strong></li>
+<li>almost always prefer <strong>InnoDB</strong> (MariaDB default)</li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">we&#8217;re going to add:
-<tt class="docutils literal"><span class="pre">default_storage_engine</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">=</span> <span class="pre">InnoDB</span></tt></p>
-</div>
 </div>
 <div class="section" id="users-permissions">
 <h2>Users &amp; Permissions<a class="headerlink" href="#users-permissions" title="Permalink to this headline">¶</a></h2>
@@ -730,13 +749,63 @@ returning</p>
 </div>
 <div class="section" id="importing-data">
 <h2>Importing Data<a class="headerlink" href="#importing-data" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>wget http://osl.io/nobel -O nobel.sql
-<span class="nv">$ </span>mysql -p nobel &lt; nobel.sql
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>wget https://sw.cs.wwu.edu/~griffi21/nobel.mysql
+<span class="nv">$ </span>mysql -p nobel &lt; nobel.mysql
 <span class="nv">$ </span>mysql -p nobel
 </pre></div>
 </div>
 <div class="highlight-sql"><div class="highlight"><pre><span class="k">SHOW</span> <span class="n">TABLES</span><span class="p">;</span>
 <span class="k">DESCRIBE</span> <span class="n">nobel</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-postgresql-usually-pronounced-postgres">
+<h2>Installing PostgreSQL (Usually pronounced Postgres)<a class="headerlink" href="#installing-postgresql-usually-pronounced-postgres" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install postgresql postgresql-client
+</pre></div>
+</div>
+</div>
+<div class="section" id="managing-postgresql">
+<h2>Managing PostgreSQL<a class="headerlink" href="#managing-postgresql" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Check if PostgreSQL is running</span>
+<span class="nv">$ </span>sudo service postgresql status
+
+<span class="c"># Start/Stop/Restart Postgres</span>
+<span class="nv">$ </span>sudo service postgresql start/stop/restart
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Configuration<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>/etc/postgresql/&lt;version&gt;/postgresql.conf<ul>
+<li>Version is probably 9.1</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>Users &amp; Permissions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo su postgres
+<span class="nv">$ </span>psql
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre><span class="n">postgres</span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">vagrant</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">&#39;password&#39;</span><span class="p">;</span>
+<span class="n">postgres</span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">nobel</span> <span class="k">OWNER</span> <span class="n">vagrant</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Importing Data<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>wget https://sw.cs.wwu.edu/~griffi21/nobel.psql
+<span class="nv">$ </span>psql nobel &lt; nobel.psql
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre># Show tables
+postgres=# \dt
+
+# Describe nobel table
+postgres=# \d+ nobel
 </pre></div>
 </div>
 </div>
@@ -783,8 +852,8 @@ returning</p>
 <p class="last">this data stops at 2008, so lets insert some 2009 awards</p>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>Practice<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>In 2009:</dt>
 <dd><ul class="first last simple">
@@ -811,8 +880,8 @@ returning</p>
 planned community</p>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>Practice<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>Practice<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li>Brigid Tenenbaum Medicine prize in 1952</li>
