@@ -65,15 +65,28 @@ Output lives in `build/` and the stuff you want to edit is in `source/`. Images
 and things go in `source/static/`.
 
 Slides will go to `build/slides`.
+
+Built html is stores on the gh-pages branch of this repository to be hosted with GitHub pages, so clone that branch into the `build/html` directory with: 
+
 ```
-make slides
+~$: mkdir build/
+~$: git clone https://github.com/wwudevops/curriculum --branch gh-pages --single-branch build/html
 ```
 
 To preview roughly how it'll look on
 [wwudevops.github.io/website][WWU DevOps Website].
+
+To make html pages
 ```
 make html
 ```
+
+To make slides
+```
+make slides
+```
+
+For changes to take effect they have to be committed and pushed upstream (remember the `build/html` is a separate branch that we're treating as it's own "repository".
 
 Leave the virtual environment.
 ```
