@@ -1,6 +1,6 @@
 # How to contribute
 
-We'd love to get feedback from students to improve the project, this is here for you guys so we want you to be a part of the development.
+We'd love to get feedback from students to improve the project, this is here for you so we want you to be a part of the development.
 
 ## Getting Started
 * Make sure you have a [GitHub account](https://github.com)
