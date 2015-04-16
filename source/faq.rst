@@ -1,16 +1,13 @@
 FAQ
 ===
 
-Email questions to devopsbootcamp@osuosl.org if they aren't answered here!
+Email questions to wwudevops@gmail.com if they aren't answered here!
 
 Is this a for-credit class?
 ---------------------------
 
-No, although the curriculum is based on `CS312`_, Linux System Administration,
-which hasn't been offered for several years.
-
-.. _CS312: http://catalog.oregonstate.edu/CourseDetail.aspx?subjectcode=CS&coursenumber=312
-
+No, although the skills gained here will help immensely with the rest of
+your coursework.
 
 What does it cost?
 ------------------
@@ -31,42 +28,22 @@ become a successful open source contributor.
 When will meetings be?
 ----------------------
 
-Weekday evenings, with a day of the week being chosen during the first meeting.
-We try to choose a day that works best for most students but it's always
-difficult to find something that works for everyone. For example, last year we had 
-meetings on Thursdays.
+Meetings are to be determined.
 
 Is this only for students?
 --------------------------
 
-No, anyone from the community can participate. Parts of the earlier lessons
-will assume access to student resources, but we can work with non-students on
-an individual basis to get them access to equivalent tools. Community members
-can use the `Visitor` wifi network when on campus.
-
-What's the difference between BootCamp and regular LUG meetings?
-----------------------------------------------------------------
-
-Regular LUG meetings are usually targeted toward an intermediate to expert
-audience, and make no attempt to comprehensively teach a set of skills across
-multiple meetings. We might teach about version control one week, privacy
-tools the next, and a new open source project by a local company the next.
-
-DevOps BootCamp will provide continuity and comprehensive open source
-education that's outside the scope of regular LUG meetings. As you progress
-through Bootcamp, you'll understand more and more of the technical content of
-LUG talks.
+Yes, at this time we are only able to provide this service to WWU students
+although we would like to expand to the community eventually.
 
 I wasn't able to participate during Fall term. Can I still join?
 ----------------------------------------------------------------
 
 Yes! Please read through lessons 1-3 (linked from the curriculum page) and 
-ask in IRC if you have trouble following the instructions for them. Catch up
+ask in Slack if you have trouble following the instructions for them. Catch up
 on that content and you'll be ready to join in Winter term. 
 
 I have a question?
 ------------------
 
-Ask it on IRC if you have that set up, or email devopsbootcamp@osuosl.org or the
-mailing list.
-
+Ask it on Slack in ``#devops``, or email wwudevops@gmail.com.

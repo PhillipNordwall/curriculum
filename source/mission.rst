@@ -4,15 +4,16 @@ Purpose of DevOps BootCamp
 From front page:
 ----------------
 
-DevOps BootCamp is an OSU Open Source Lab and OSU Linux Users Group program
-aimed at boosting our impact and outreach while shrinking the skills gap for OSU
-students interested in DevOps.
+WWU DevOps BootCamp is an adaptation of an OSU Open Source Lab and OSU Linux Users Group program
+that aims to boost our impact and outreach while shrinking the skills gap for
+OSU students interested in DevOps.
 
 From FAQ: 
 ---------
 
 DevOps BootCamp will provide continuity and comprehensive open source education
-that’s outside the scope of regular LUG meetings.
+that’s outside the WWU Computer Science curriculum..
+
 
 "The Deal"
 ----------
@@ -37,7 +38,6 @@ Why we’re offering this:
 * The OSL gets to work with a wider variety of students, which fits better
   with its new status as part of the school of EECS
 * The open source community gets more contributors to its projects
-
  
 Target Audience
 ---------------
