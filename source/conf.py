@@ -125,7 +125,7 @@ html_theme = 'default'
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-#html_favicon = None
+html_favicon = 'icon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -174,7 +174,7 @@ html_static_path = ['static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'OSUDevOpsBootcampdoc'
+htmlhelp_basename = 'WWUDevOpsBootcampdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -193,8 +193,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'OSUDevOpsBootcamp.tex', u'OSU DevOps Bootcamp Documentation',
-   u'OSU OSL & OSU LUG', 'manual'),
+  ('index', 'WWUDevOpsBootcamp.tex', u'WWU DevOps Bootcamp Documentation',
+   u'WWU', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -223,8 +223,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'osudevopsbootcamp', u'OSU DevOps Bootcamp Documentation',
-     [u'OSU OSL & OSU LUG'], 1)
+    ('index', 'wwudevopsbootcamp', u'WWU DevOps Bootcamp Documentation',
+     [u'WWU'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -237,8 +237,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'OSUDevOpsBootcamp', u'OSU DevOps Bootcamp Documentation',
-   u'OSU OSL & OSU LUG', 'OSUDevOpsBootcamp', 'One line description of project.',
+  ('index', 'WWUDevOpsBootcamp', u'WWU DevOps Bootcamp Documentation',
+   u'WWU', 'WWUDevOpsBootcamp', 'One line description of project.',
    'Miscellaneous'),
 ]
 
