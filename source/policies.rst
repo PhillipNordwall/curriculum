@@ -19,10 +19,8 @@ You get:
 
 Why we're offering this:
 
-- The OSL gets a larger pool of candidates to recommend to companies interested
-  in recruiting OSL students
-- The OSL gets to work with a wider variety of students, which fits better
-  with its new status as part of the school of EECS
+- To help you succeed in your careers 
+- To improve the reputation of WWU and quality of its graduates 
 - The open source community gets more contributors to its projects
 
 Attendance
@@ -41,26 +39,6 @@ attend a lesson and don't understand something from it, you're welcome to ask
 in class, because others very likely have the same concern. But if you want to
 make up a class you skipped, it's disrespectful to those who attended to spend
 their class time on questions which you could resolve on your own time.
-
-Laptops
-=======
-
-As the course progresses, you will need a laptop. We hope and recommend that you
-will decide to set up your laptop to dual-boot to Linux as the course
-progresses, but but it's not required. If you don't own a laptop and are an OSU
-student you can check out a laptop from the OSU Library for at least 24 hours
-at a time.
-
-Realistically, as long as it's new enough to boot from USB and connect to
-wireless networks, your laptop's specifications don't matter much.
-If it's so new that its UEFI configuration prevents you from dual-booting with
-Linux, it will be powerful enough to run virtual machines. If it's old enough
-to be unable to run VMs but still has wireless connectivity, we'll teach you
-how to ssh to a remote server to perform more computationally intensive tasks.
-
-If you are not an OSU student and do not have access to a working laptop,
-contact the DevOps BootCamp organizers and we'll see whether we can arrange to
-loan you something for meetings.
 
 Target Audience
 ===============

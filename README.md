@@ -4,26 +4,6 @@ WWU Version hosted at [wwudevops.github.io/website][WWU DevOps Website].
 
 OSU Version hosted at [devopsbootcamp.osuosl.org][OSU DevOps BootCamp].
 
-This repository has a post-commit hook set up to update the main site every
-time the master branch is changed. If the site doesn't update within a couple
-of minutes, the build may have failed. Check that `make html` doesn't throw
-any errors in your copy of the repo, and ask someone with admin access on
-readthedocs to investigate what it reports is broken.
-
-## Viewing Slides
-
-Slides are available at [wwudevops.github.io/slides][WWU DevOps Slides], and
-rebuilt automatically whenever new content is pushed to the master branch of
-this repo.
-
-The script in scripts/build.sh automatically removes the slides that were built
-of non-slides content, based on the assumption that the filenames of all actual 
-slides start with the week number.   
-
-You can also build the slides locally if you've been editing them and want to
-see how they'll look before you push, or if you don't have push access to the
-project: 
-
 ## Installing Dependencies
 
 ### Debian and Ubuntu
@@ -65,15 +45,23 @@ Output lives in `build/` and the stuff you want to edit is in `source/`. Images
 and things go in `source/static/`.
 
 Slides will go to `build/slides`.
+
+Built html is stores on the gh-pages branch of this repository to be hosted with GitHub pages, so clone that branch into the `build/html` directory with: 
+
 ```
-make slides
+~$: mkdir build/
+~$: git clone https://github.com/wwudevops/curriculum --branch gh-pages --single-branch build/html
 ```
 
 To preview roughly how it'll look on
-[wwudevops.github.io/website][WWU DevOps Website].
+[wwudevops.github.io/curriculum][WWU DevOps Curriculum].
+
+To make html pages
 ```
 make html
 ```
+
+For changes to take effect they have to be committed and pushed upstream (remember the `build/html` is a separate branch that we're treating as it's own "repository".
 
 Leave the virtual environment.
 ```
